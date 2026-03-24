@@ -1,0 +1,30 @@
+helper: str = 'ISO 27001 Helper'
+print(f'Hello! I\'m {helper}! Which 2022 Annex A control can I help with?')
+
+def normalise_control(user_input):
+    user_input = user_input.strip().upper()   # remove spaces, standardise case
+    user_input = user_input.replace('A.', '') # remove 'A.'
+    user_input = user_input.replace('A', '')  # remove 'A' if no dot
+    return user_input
+
+controls = {'5.1': 'is all about information security policies. An auditor would expect to see formally approved policies that are communicated to staff and regularly reviewed.',
+            '5.2': 'handles info sec roles and responsibilities. An auditor would look for a list of defined roles given to appropriate staff who are accountable for specific actions or processes.',
+            '5.3': 'requires the segregation of duties. An auditor would expect to see duties separated between people to prevent conflicts, with access controls or processes enforcing separation.'}
+
+while True:
+    user_input: str = input('Enter a control number (or \"exit\" to leave): ') # user enters control here which is changed into something the dictionary can find
+    normalised = normalise_control(user_input)
+
+    if user_input.lower() in ['exit', 'quit']:
+        print("Exiting ISO 27001 Helper. Goodbye!")
+        break
+
+    if normalised in ['5', '6', '7', '8']:
+        print(f'{helper}: Great, narrow it down to a more specific control number')
+    elif normalised in controls:
+        print(f'{helper}: A.{normalised} {controls[normalised]}')
+    else:
+        print(f'{helper}: That doesn\'t make sense to me, sorry!')
+
+
+
