@@ -4,4 +4,4 @@ This was my first attempt at getting to grips with coding in python. I watched a
 
 I researched how to ensure the correct response was sent to the user if they typed the control in with the letter 'A' or not, this made it more flexible to the different ways a user might enter the control number. I 'normalised' the input and this is what the rest of the script used.
 
-Super simple but fun to make. A use case would be to have company specific information that an employee could grab just before something like an audit, giving them key points to mention to an auditor.
+Super simple but fun to make. A use case would be prepping for an audit to make sure you know what you may have to demonstrate to an auditor. You could also have company specific information stored in there relavent to each control that an employee could grab just before going into an audit, giving them key points to mention to an auditor.
